@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logomain.svg"  type="image/x-icon" />
+
+    <title>KnoWell</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 
+                        0 10px 25px rgba(0, 0, 0, 0.05),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+            text-align: center;
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 20%,
+                rgba(255, 255, 255, 0.1) 20%,
+                rgba(255, 255, 255, 0.1) 40%,
+                transparent 40%
+            );
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+        
+        .logo {
+            width: 80px;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: #1a365d;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 2px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6a11cb;
+            background-color: white;
+            padding: 0 8px;
+            z-index: 1;
+        }
+        
+        input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            font-size: 1rem;
+            color: #334155;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+        }
+        
+        button {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(106, 17, 203, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        #status {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            top: -30px;
+            left: -30px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+        }
+        
+        .decoration-2 {
+            bottom: -40px;
+            right: -40px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        <svg class="logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 9C21 12.3137 18.3137 15 15 15C14.3938 15 13.8087 14.9101 13.2571 14.7429C12.1429 14.381 11.381 13.6191 11.0191 12.5049C10.3347 10.5556 11.0201 8.36863 12.6863 7.13137C13.5025 6.52335 14.2474 6.02335 15 6C18.3137 6 21 9 21 9Z" stroke="url(#paint0_linear)" stroke-width="1.5"/>
+            <path d="M3 15C3 11.6863 5.68629 9 9 9C9.60622 9 10.1913 9.08993 10.7429 9.25708C11.8571 9.61905 12.619 10.3809 12.9809 11.4951C13.6653 13.4444 12.9799 15.6314 11.3137 16.8686C10.4975 17.4766 9.75258 17.9766 9 18C5.68629 18 3 15 3 15Z" stroke="url(#paint1_linear)" stroke-width="1.5"/>
+            <defs>
+                <linearGradient id="paint0_linear" x1="11" y1="6" x2="21" y2="15" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#6a11cb"/>
+                    <stop offset="1" stop-color="#2575fc"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="13" y1="9" x2="3" y2="18" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2575fc"/>
+                    <stop offset="1" stop-color="#6a11cb"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <h1>Meeting Info</h1>
+        <form id="meetForm">
+            <div class="input-group">
+                <label for="meetId">Meeting ID</label>
+                <input type="text" id="meetId" required placeholder="Enter your meeting ID">
+            </div>
+            
+            <div class="input-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required placeholder="Enter your name">
+            </div>
+            
+            <button type="submit">Join Meeting</button>
+        </form>
+        <p id="status">Enter your details to join the meeting</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
